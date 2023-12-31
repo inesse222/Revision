@@ -235,4 +235,198 @@ function weirdDivisionWithRecursion (n) {
     }
 
 
+//8 -------
+
+function addDigitsFor(num) {
+    var add=0
+    var str=num.toString()
+
+    for(var i=0 ; i<str.length ; i++) {
+        add+=parseInt(str[i])
+    }
+    return add
+}
+
+
+function addDigitsWhile(num) {
+    var add=0
+    var str=num.toString()
+    var i=0
+    while(  i<str.length ) {
+        add+=parseInt(str[i])
+        i++
+    }
+    return add
+}
+
+//9 -------------
+
+function fibRecursive(number) {
+    if (number===0){
+        return 1  
+    }
+    if(number===1){
+        return 1
+    }
+    return fibRecursive(number-1)+fibRecursive(number-2)
+    
+}
+
+//10 -----------
+
+function firstDigit(str) {
+    for (var i=0 ; i<str.length ; i++){
+        if (str[i]>=0 && str[i]<=9){
+            return str[i]
+        }
+    } 
+}
+
+function firstDigitWithWhile(str) {
+    var i=0
+    while ( i<str.length ){
+        if (str[i]>=0 && str[i]<=9){
+            return str[i]
+        }
+         i++
+    } 
+}
+
+// 11 ------
+
+function remove(arr, el) {
+    var res= []
+ 
+     for (var i=0 ; i<arr.length ; i++){
+         if(arr[i] !== el){
+            res.push(arr[i]) 
+         }
+     }
+     return res
+ }
+
+ // or
+
+ function remove(arr, el) {
+
+    for (var i=0 ; i<arr.length ; i++){
+        if(arr[i] === el){
+           arr.splice(i,1) 
+        }
+    }
+    return arr
+}
+
+ //12 -------
+
+ function averageWithFor (arr) {
+    var ave = 0 
+    for (var i=0 ; i<arr.length ; i++){
+        ave+= arr[i]/arr.length
+    }
+    return ave
+}
+
+//with recursion
+
+function ave (arr) {
+    if (arr.length===0){
+        return 0    
+    }
+    if(arr.length===1){
+        return arr[0]
+    }
+    
+    return (arr[0]+ave(arr.slice(1)) ) / arr.length
+}
+// 13 --------
+
+function findMax(str) {
+    var max=str[0]
+    for (var i=1 ; i<str.length ; i++){
+        if(str[i]>max){
+            max=str[i]
+        }
+    }
+    return max
+}
+
+function findMax(str) {
+    var max=str[0]
+    var i=1
+    while ( i<str.length  ){
+        if(str[i]>max){
+            max=str[i]
+        }
+        i++
+    }
+    return max
+}
+
+
+
+// 14 ----------
+
+function evenDigits(str) {
+    for (var i = 0; i < str.length; i++) {
+        if (parseInt(str[i]) % 2 !== 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// with recursion
+
+function even (str){
+    if (str.length===0) {
+        return true
+    }
+
+    if(parseInt(str[0]) %2 !== 0 ){
+        return false
+    }
+    return even (str.slice(1))
+}
+
+//15 -----------
+
+function palindrom(str) {
+    var reversed=""
+
+    for (var i=str.length-1 ; i>=0 ; i--){
+         reversed+=str[i]
+    }
+    if (str===reversed) {
+       return true 
+    }
+    return false 
+}
+
+//16 -------
+
+function firstDuplicate(array){
+
+    for(var i=0 ; i<array.length ; i++){
+        for (var j=i+1 ; j<array.length ; j++){
+            if (array[i] === array[j]) {
+                return array[i]
+            }
+        }
+    }
+     return "No Duplicates"
+    
+}
+
+//17 --------
+
+function rowandseat (rows,seat){
+    
+    for(var i=0 ; i<rows ; i++){
+        for (var j=0 ; j<seat ; j++){
+            console.log("row"+ i + "-seat" + j)
+        }
+    }
+}
+
 
